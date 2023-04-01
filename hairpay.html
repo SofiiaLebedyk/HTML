@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        footer {
+          
+          padding: 20px;
+          background-color: rgb(95, 63, 162);
+          color: rgb(255, 255, 252);
+        }
+        </style>
+</head>
+<body style="background-image:url('images/pawel-czerwinski-arwTpnIUHdM-unsplash.jpg');background-size:100%; background-repeat: no-repeat; background-color: rgb(255, 255, 255);  " >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>>
+    <nav class="navbar fixed-top bg-white navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <i class="bi bi-scissors"></i> HairStyleMan</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/hair.html" target="_blank">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5500/pay.html" target="_blank">log in</a>
+              </li>
+              <li class="nav-item">
+                
+              </li>
+            </ul>
+            <span class="navbar-text">
+                <a class="nav-link active" aria-current="page"> <a href="mailto:hairstyle@gmail.com" class="link-success">Send mail</a>
+            </span>
+          </div>
+        </div>
+      </nav>
+  </nav>
+  <br><br><br>
+    <h1 style="text-align: center;" ><img src="https://cdn-icons-png.flaticon.com/512/7173/7173387.png" width="300px;"> Pay courses mans hairstyle</h1>
+    <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        paypal.Buttons({
+          style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'paypal',
+            
+          },
+  
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+            });
+          },
+  
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(orderData) {
+              
+              // Full available details
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+  
+              // Show a success message within this page, e.g.
+              const element = document.getElementById('paypal-button-container');
+              element.innerHTML = '';
+              element.innerHTML = '<h3>Thank you for your payment!</h3>';
+  
+              // Or go to another URL:  actions.redirect('thank_you.html');
+              
+            });
+          },
+  
+          onError: function(err) {
+            console.log(err);
+          }
+        }).render('#paypal-button-container');
+      }
+      initPayPalButton();
+    </script>
+    <h1 style="text-align: center;" ><img src="images/step-2.png" width="300px;">  Log in my veb site</h1>
+   <p style="text-align: center;">
+   <input type="text" id="admin" placeholder="put here your email"/><br>
+    <input type="password" id="admin" placeholder="*******"/> <br>
+    <button onclick="javascript:Login();">Send</button>
+   </p>
+   <!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+        
+            <div class="col-auto">
+                <i class="bi bi-scissors"> </i><h3>HairStyleMan</h3>
+            </div>
+            <div class="col-auto">
+                <li>Location: Los Angeles, California </li>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211523.8128605485!2d-118.23045808593749!3d34.067987017798835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1679887894732!5m2!1sen!2sus" width="400" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-auto">
+                Number: +1 382 264 2234
+            </div>
+            <div class="col-auto">
+                <a href="mailto:hairstyle@gmail.com" class="link-success"><h6>Send mail</h6>
+            </div>
+        </div>
+        </div>
+</footer>
+</body>
+<script>
+    function Login() {
+        let email = document.getElementById("admin").value;
+        let pass = document.getElementById("admin").value;
+
+        //if the email doesn't exist
+        if (!email) {
+            alert("Please,type your email");
+            return;
+        }
+
+        //if the password doesn't exist
+        if (!pass) {
+            alert("Please, type your password");
+            return;
+        }
+
+        //save the information on local storage
+        localStorage.setItem("Email",email);
+
+        //redirect to another page
+        location.replace("hairvideo.html")
+    }
+
+
+</script>
+</html>

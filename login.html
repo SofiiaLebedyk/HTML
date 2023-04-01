@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <input type="text" id="textEmail" placeholder="put here your email"/><br>
+    <input type="password" id="textPassword" placeholder="*******"/> <br>
+    <button onclick="javascript:Login();">Send</button>
+</body>
+
+<script>
+    function Login() {
+        let email = document.getElementById("textEmail").value;
+        let pass = document.getElementById("textPassword").value;
+
+        //if the email doesn't exist
+        if (!email) {
+            alert("Please,type your email");
+            return;
+        }
+
+        //if the password doesn't exist
+        if (!pass) {
+            alert("Please, type your password");
+            return;
+        }
+
+        //save the information on local storage
+        localStorage.setItem("Email",email);
+
+        //redirect to another page
+        location.replace("welcome.html")
+    }
+
+
+</script>
+</html>

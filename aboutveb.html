@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SporysAbout</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', ],
+          ['2019',  40000,      ],
+          ['2020',  35600,      ],
+          ['2021',  67789,       ],
+          ['2022',  90863,      ],
+               
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+<body>
+   <!--navbar--> 
+   <div class="container-fluid">
+    <nav class="navbar fixed-top bg-dark navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Sports <i class="bi bi-globe-americas"></i></a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/vebsin.html" target="_blank">Sing in </a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+<!--image-->
+    <br><br/><br>
+    <h1 style="text-align: center; color: rgb(52, 33, 33);">About company</h1>
+    <br><br/>
+    <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="https://img.freepik.com/premium-psd/logo-modern-big-building-signboard-mockup-free-psd_541010-26.jpg" style="border-radius: 20px;">
+                </div>
+                <br><br><br><br>
+                <div class="col">
+                    <br><br><br><br>
+                <h5>We are a company that opened in 2019. We have been working with tho most powerful companies Adidas and Nike since 2020.</h5>
+               
+            </div>
+            </div>
+            <!--video-->
+            <div class="container">
+              <div class="row">
+            <div class="col-auto">
+                <br><br>
+                <h1>Video</h1>
+                <iframe style="border-radius: 20px;"
+                width="560" height="315" src="https://www.youtube.com/embed/nMdBtOdzXhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <!--charts-->
+            <div class="col-auto">
+              <div id="curve_chart" style="width: 900px; height: 500px">
+              </div>
+              <br><br>
+              <!--menu-->
+              <div class="container">
+              <div class="row" >
+                <div class="col-auto">
+                  <a href="https://www.adidas.com/us" target="_blank" class="link-primary"><h3>Adidas</h3></a>
+                </div>
+                  <div class="col-auto">
+                  <a href="https://www.nike.com/?cp=64463035706_search_%7Cnike+website%7CGOOGLE%7C71700000086790368%7CGN_X_X_X_X-Device_X_NikeStore-URL_Exact%7Ce%7Cc&gclsrc=aw.ds&&gclid=CjwKCAiAu5agBhBzEiwAdiR5tA_Z56mhspaf-1Yy4O4JuZ4HlFXVyNxERgx6OJ2SK4M7lflLgCrKBBoC6CUQAvD_BwE&gclsrc=aw.ds"  target="_blank" class="link-secondary"><h3>Nike</h3></a>
+                  </div>
+                  <div class="col-auto">
+                  <a href="mailto:company@gmail.com" class="link-success"><h3>Send mail</h3></a>
+                  </div>
+                  <div class="col-auto">
+                  
+              <h3>Contact</h3>
+              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">click here</button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"><h2>Contact<h/2></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <ul><li><h3></h3> Phone: +1 (234) 705-33-78</h3></li></ul>
+            <ul><li><h3></h3> Email: company34@gmail.com</h3></li></ul>
+            </div>
+          </div>
+        </div>
+</body>
+</html>
